@@ -1,0 +1,69 @@
+<p></p>
+<div class="container">
+  <div
+    class="panel panel-primary"
+    style="  border: 1px solid; border-radius: 8px;"
+  >
+    <div
+      class="panel-heading"
+      style="background-color: #04B4AE; padding: 20px; border-radius: 6px;"
+    >
+      Liste des Articles
+    </div>
+    <div class="panel-body">
+      <form class="form-inline" style="padding:10px;">
+        <input
+          name="mc"
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Chercher un article"
+          aria-label="Search"
+          [(ngModel)]="motCle"
+        />
+        <button class="btn btn-sm btn-info my-2 my-sm-0" (click)="chercher()">
+          Chercher
+        </button>
+      </form>
+      <table class="table table-striped">
+        <thead class="table-success">
+          <th>#</th>
+          <th>Articles</th>
+          <th>Text</th>
+          <th>Image</th>
+          <th>Operations</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let Article of articles">
+            <td>{{ Article.id }}</td>
+            <td>{{ Article.name }}</td>
+            <td>{{ Article.text }}</td>
+            <td>{{ Article.image }}</td>
+            <td class="btn-toolbar">
+              <button
+                class="btn btn-sm btn-danger"
+                (click)="deletearticle(Article)"
+              >
+                Supprimer
+              </button>
+
+              <button
+                class="btn btn-sm btn-info"
+                (click)="updatearticle(Article)"
+              >
+                Modifier
+              </button>
+            </td>
+          </tr>
+          <p></p>
+          <button
+            class="btn btn-success"
+            (click)="newarticle()"
+            style="margin-left:10px;"
+          >
+            Nouveau Article
+          </button>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

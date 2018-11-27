@@ -1,0 +1,47 @@
+<div class="container">
+  <form (ngSubmit)="processForm()">
+    <div class="form group">
+      <label for="id">Id</label>
+      <input
+        type="text"
+        name="id"
+        class="form-control"
+        [(ngModel)]="article.id"
+      />
+    </div>
+
+    <div class="form group">
+      <label for="name">Nom d'article</label>
+      <input
+        type="text"
+        name="name"
+        class="form-control"
+        [(ngModel)]="article.name"
+      />
+    </div>
+    <div class="form group">
+      <label for="text">Description</label>
+      <textarea
+        rows="3"
+        placeholder="Taper le text"
+        type="text"
+        name="text"
+        class="form-control"
+        [(ngModel)]="article.text"
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2">Inserer l'image </label>
+      <div class="col-xs-3">
+        <input
+          type="file"
+          name="image"
+          class="form-control-file border"
+          [(ngModel)]="article.image"
+        />
+      </div>
+    </div>
+    <p></p>
+    <input type="submit" value="save" class=" btn btn-success" />
+  </form>
+</div>
